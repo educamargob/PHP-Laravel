@@ -1,0 +1,32 @@
+:root{
+    --cinza-escuro: #333;
+    --cinza-claro: #ccc;
+}
+table{
+    width: 100%;
+    
+}
+th{
+    color:var(--cinza-claro)
+
+}
+td{
+    text-align: center;
+    color: var(--cinza-escuro);
+}
+tr td:first-child{
+    color:rgb(64, 64, 194);
+    background-color: white;
+}
+td:nth-child(odd){
+    background-color: rgb(231, 231, 231);
+}
+td:nth-child(3){
+    font-weight: bold;
+
+}
+td, th{
+    border-bottom: 3px solid black;
+    padding: 0px;
+}
+
