@@ -1,10 +1,6 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Lista de Categorias') }}
-        </h2>
-    </x-slot>
+@extends('template')
 
+@section('conteudo')
     <div class="container">
         <div class="row">
 
@@ -22,14 +18,14 @@
                     </thead>
                     <tbody>
                         
-                        @foreach ($categorias as $en)
+                        @foreach ($categorias as $ct)
                         
                             <tr>
-                                <td>{{ $en->id }}</td>
-                                <td><a href="/ifsport/produtos/categoria/{{ $en->id }}">{{ $en->nome }}</a></td>
+                                <td>{{ $ct->id }}</td>
+                                <td><a href="/ifsport/produtos/categoria/{{ $ct->id }}">{{ $ct->nome }}</a></td>
                                 <td>
                                     <a href="#"
-                                        onclick="excluir({{ $en->id }})" class="btn btn-danger">Excluir</a>
+                                        onclick="excluir({{ $ct->id }})" class="btn btn-danger">Excluir</a>
                                 </td>
                             </tr>
                         @endforeach
@@ -41,7 +37,7 @@
         </div>
         <div class="col-1">
         </div>
-</x-app-layout>
+@endsection
 <script>
     function excluir(id) {
         if (confirm(`Deseja realmente excluir o endereco ${id}?`)) {

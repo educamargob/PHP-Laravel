@@ -1,10 +1,6 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Lista de Transportadoras') }}
-        </h2>
-    </x-slot>
+@extends('template')
 
+@section('conteudo')
     <div class="container">
         <div class="row">
 
@@ -56,7 +52,7 @@
         </div>
         <div class="col-1">
         </div>
-</x-app-layout>
+@endsection
 <script>
     function excluir(id) {
         if (confirm(`Deseja realmente excluir a transportadora ${id}?`)) {

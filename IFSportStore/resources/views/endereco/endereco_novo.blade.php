@@ -1,9 +1,6 @@
-<x-app-layout>
-    <x-slot name="header">
-      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        {{ __('Cadastro de Enderecos') }}
-      </h2>
-    </x-slot>
+@extends('template')
+
+@section('conteudo')
         <div id="cadTransp" style="padding-top: 15px;">
 
             <div class="container">
@@ -93,4 +90,4 @@
 
 
         </div>
-</x-app-layout>
+@endsection

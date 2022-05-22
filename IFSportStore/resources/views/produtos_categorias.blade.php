@@ -1,10 +1,6 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Lista de fornecedores') }}
-        </h2>
-    </x-slot>
+@extends('template')
 
+@section('conteudo')
 <body>
         <div class="container">
             <hr class="mt-3">
@@ -93,4 +89,4 @@
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
-</x-app-layout>
+@endsection
