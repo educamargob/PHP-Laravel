@@ -34,6 +34,7 @@
                   @if(Auth::user()-> nivel == 1)
                     <li><a href="{{ route('transportadoras_listar') }}" class="nav-link mx-2 text-white pr-5">Transportadoras</a></li>
                     <li><a href="{{ route('fornecedores_listar') }}" class="nav-link mx-2 text-white pr-5">Fornecedores</a></li>
+                    <li><a href="{{ route('produtos_listar') }}" class="nav-link mx-2 text-white pr-5">Produtos</a></li>
                   @endif
                 @endif
                 </ul>

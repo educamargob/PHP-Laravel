@@ -56,9 +56,12 @@ Route::get('/', function () {
 
             Route::middleware('verifica.nivel')->group(function () {
                 /*  ---------------------------------------Produtos---------------------------------------------- */
-                Route::get('/ifsport/produtos/novo', [ProdutosController::class, 'cadastro'])->name('produtos_novo');
-                Route::post('/ifsport/produtos/novo', [ProdutosController::class, 'novo'])->name('produtos_salvar');
+                Route::get('/ifsport/produtos/novo', [ProdutosController::class, 'cadastro'])->name('produto_cadastro');
+                Route::post('/ifsport/produtos/novo', [ProdutosController::class, 'novo'])->name('produtos_novo');
                 Route::get('/ifsport/produtos/listar', [ProdutosController::class, 'listar'])->name('produtos_listar');
+                Route::get('/ifsport/produtos/alterar/{id}', [ProdutosController::class, 'alterar'])->name('produto_alterar');
+                Route::post('/ifsport/produtos/alterar/', [ProdutosController::class, 'salvar'])->name('produto_salvar');
+                Route::get('/ifsport/produtos/excluir/{id}', [ProdutosController::class, 'excluir'])->name('produtos_excluir');
                 Route::get('/ifsport/produto/{slug}', [ProdutosController::class, 'exibir'])->name('produtos_exibir');
 
                 /*  ---------------------------------------Transportadoras---------------------------------------------- */
