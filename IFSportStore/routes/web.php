@@ -21,10 +21,11 @@ use App\Http\Controllers\EnderecosController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
-    return view('welcome');
-});
+    //return view('welcome');
+    return redirect()->route('produtos_vitrine');
+});*/
 
     Route::get('/dashboard', function() {
         return view ('dashboard');
@@ -40,14 +41,12 @@ Route::get('/', function () {
             Route::post('/ifsport/enderecos/alterar/', [EnderecosController::class, 'salvar'])->name('enderecos_salvar');
             Route::get('/ifsport/enderecos/excluir/{id}', [EnderecosController::class, 'excluir'])->name('enderecos_excluir');
 
-
-            Route::get('/ifsport/store', [ClientesController::class, 'store']);
-
+/*
             Route::get('/ifsport/produtos/novo', [ProdutosController::class, 'cadastro'])->name('produtos_novo');
             Route::post('/ifsport/produtos/novo', [ProdutosController::class, 'novo'])->name('produtos_salvar');
 
             Route::get('/ifsport/produtos/listar', [ProdutosController::class, 'listar'])->name('produtos_listar');
-            Route::get('/ifsport/produto/{slug}', [ProdutosController::class, 'exibir'])->name('produtos_exibir');
+            Route::get('/ifsport/produto/{slug}', [ProdutosController::class, 'exibir'])->name('produtos_exibir');*/
              /*  ---------------------------------------Categorias---------------------------------------------- */
             //Route::get('/ifsport/categorias/novo', [CategoriasController::class, 'cadastro'])->name('categorias_cadastro');
             Route::post('/ifsport/categorias/novo', [CategoriasController::class, 'novo'])->name('categorias_novo');
@@ -83,7 +82,7 @@ Route::get('/', function () {
 
 });
 Route::get('/ifsport/produtos/carrinho', [ProdutosController::class, 'carrinho'])->name('produtos_carrinho');
-    Route::get('/ifsport/produtos/vitrine', [ProdutosController::class, 'vitrine'])->name('produtos_vitrine');
+    Route::get('/', [ProdutosController::class, 'vitrine'])->name('produtos_vitrine');
     Route::get('/ifsport/produtos/categoria/{id}', [ProdutosController::class, 'produtosCategoria'])->name('produtos_categoria');
 
 require __DIR__.'/auth.php';

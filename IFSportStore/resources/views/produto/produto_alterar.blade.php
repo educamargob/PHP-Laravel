@@ -13,6 +13,11 @@
     
             <form action="{{ route('produto_salvar') }}" method="post" enctype="multipart/form-data">
                 @csrf
+
+                <div class="modal-header p-5 pb-4 border-bottom-0">
+                        <!-- <h5 class="modal-title">Modal title</h5> -->
+                        <h2 class="fw-bold mb-0">Alteração de Produtos</h2>
+                    </div>
                 <input type="hidden" name="id" value="{{ $produto->id }}">
                     
                     <div class="mb-3">
@@ -44,8 +49,8 @@
                             <input type="file" class="arquivo" name="arquivo" id="arquivo">
                         </div>
                 
-                    <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-3" type="submit">
-                        Alterar Fornecedor
+                    <button class="w-100 py-2 mb-2 btn-gray btn-outline-dark rounded-3" type="submit">
+                        Alterar Produto
                     </button>
                 </form>
             </div>

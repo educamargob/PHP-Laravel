@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for"cep">cep</label>
+    <input type="number" id="cep" name="cep" onchange="buscaCep()">
+    <hr>
+    <label for="logradouro">Logradouro</label>
+    <input type="text" id="logradouro"><br>
+    <label for="complemento">Complemento</label>
+    <input type="text" id="complemento">
+    <label for="bairro">Bairro</label>
+    <input type="text" id="bairro">
+    <label for="cidade">Cidade</label>
+    <input type="text" id="cidade">
+    <label for="uf">UF</label>
+    <input type="text" id="uf">
+    <script>
+        function buscaCep(){
+            let ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = () => {
+                if (ajax.readyState == XMLHttpRequest.DONE){
+                    let retorno = JSON.parse(ajax.responseText);
+                    cidade.value = retorno.localidade;
+                    logradouro.value = retorno.logradouro;
+                    bairro.value = retorno.bairro;
+                    uf.value = retorno.uf;
+                    complemento.value = retorno.complemento;
+                }
+            }
+        console.log(`viacep.com.br/ws/${cep.value}/json/`)
+        ajax.open("GET", `https://viacep.com.br/ws/${cep.value}/json/`); 
+        
+        ajax.send();
+        }
+    </script>
+</body>
+</html>
